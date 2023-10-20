@@ -14,7 +14,10 @@
 - implement signIn user API
 - created redux store with userSlice
 - implemented signout
-- fetch movies from TMDB api
+- bug fix : redirect to /login from /browse if the user is not signed in and vice versa
+- unsubscribed to onAuthStateChanged callback
+- add hardcoded values to constant file
+
 
 # features
 

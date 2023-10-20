@@ -8,12 +8,12 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { BACKGROUND_IMAGE } from "../utils/constansts";
 
 const Login = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [isSignIn, setIsSignIn] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -58,7 +58,6 @@ const Login = () => {
               dispatch(
                 addUser({ uid: uid, email: email, displayName: displayName })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               // An error occurred
@@ -83,7 +82,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          navigate("/browse");
+
           console.log(user);
         })
         .catch((error) => {
@@ -107,11 +106,13 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div className="absolute">
+      <div className="absolute w-screen h-screen">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/60"></div>
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/ab180a27-b661-44d7-a6d9-940cb32f2f4a/7fb62e44-31fd-4e1f-b6ad-0b5c8c2a20ef/IN-en-20231009-popsignuptwoweeks-perspective_alpha_website_large.jpg"
-          alt="logo"
-        ></img>
+          className="w-full h-full object-cover"
+          src={BACKGROUND_IMAGE}
+          alt="bg_img"
+        />
       </div>
 
       <form
@@ -141,7 +142,7 @@ const Login = () => {
           type="password"
           placeholder="Password"
         ></input>
-        <p className="text-red-800  py-2">{errorMessage}</p>
+        <p className="text-red-800 text-md py-2">{errorMessage}</p>
         <button
           onClick={handleButtonClick}
           className="p-4 my-3 disabled bg-red-600 text-white w-full rounded-md h-full text-center"

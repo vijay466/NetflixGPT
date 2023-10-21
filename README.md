@@ -17,7 +17,15 @@
 - bug fix : redirect to /login from /browse if the user is not signed in and vice versa
 - unsubscribed to onAuthStateChanged callback
 - add hardcoded values to constant file
-
+- register for tmdb api and create an app overthere and get accesstoken
+- go to documentation and make an api call and get data from nowPlaying api
+- add movie data to redux store by creating movie slice
+- create movie slice
+- created custom hook for playing movies
+- planning for main container and secondary container
+- fetch data for trailer video
+- update store with trailer video
+- embeded youtube video and make it autoplay and mute
 
 # features
 

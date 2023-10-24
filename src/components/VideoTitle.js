@@ -2,7 +2,7 @@ import React from "react";
 import { BsFillPlayFill } from "react-icons/bs";
 const VideoTitle = ({ title, overview }) => {
   return (
-    <div className=" w-screen aspect-video bg-gradient-to-r from-black absolute pt-[22%] px-20 text-white">
+    <div className=" w-screen aspect-video bg-gradient-to-r from-black absolute pt-[19%] px-20 text-white">
       <h1 className="text-5xl font-bold">{title}</h1>
       <p className="py-6 text-lg w-1/2">{overview}</p>
       <div className="flex">

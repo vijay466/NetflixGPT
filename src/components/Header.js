@@ -1,10 +1,12 @@
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
 import React, { useEffect } from "react";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser, removeUser } from "../utils/userSlice";
+import { addUser } from "../utils/userSlice";
 import { NEXTFLIX_LOGO } from "../utils/constansts";
+import UserProfileDropdown from "./Dropdown";
+import SearchBar from "./SearchBar";
 
 const Header = () => {
   const user = useSelector((store) => store.user);
@@ -24,41 +26,24 @@ const Header = () => {
     });
     return () => unsubscribe();
   }, []);
-  const handleSignOut = () => {
-    signOut(auth)
-      .then(() => {
-        dispatch(removeUser());
 
-        navigate("/logout");
-      })
-      .catch((error) => {
-        // An error happened.
-        dispatch(removeUser());
-        navigate("/errorPage");
-      });
-  };
   return (
-    <div className="absolute w-screen px-14 py-1 bg-gradient-to-b from-black z-10 flex justify-between">
+    <div className="absolute w-screen px-16 py-1 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between bg-black sm:bg-blue-600 md:bg-green-500">
       <img
-        className="bg-gradient-to-b from-black to-transparent w-44"
+        className="bg-gradient-to-b from-black to-transparent w-44 mx-auto md:mx-0"
         src={NEXTFLIX_LOGO}
         alt="netflix_logo"
       />
 
       {user && (
-        <div className="flex p-2 m-3 mx-2">
-          <button
-            onClick={handleSignOut}
-            className="text-white text-sm font-bold p-2 bg-red-600 m-3 rounded-md px-3 py-2 hover:bg-red-800 focus:ring-4"
-          >
-            Sign Out
-          </button>
-
+        <div className="flex m-3 mx-2">
+          <SearchBar />
           <img
             className="w-10 h-10 mt-2 "
             alt="userIcon"
             src="https://occ-0-3215-3663.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY20DrC9-11ewwAs6nfEgb1vrORxRPP9IGmlW1WtKuaLIz8VxCx5NryzDK3_ez064IsBGdXjVUT59G5IRuFdqZlCJCneepU.png?r=229"
           />
+          <UserProfileDropdown />
         </div>
       )}
     </div>

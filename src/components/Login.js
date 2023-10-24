@@ -64,12 +64,12 @@ const Login = () => {
               setErrorMessage(error.message);
             });
 
-          console.log(user);
+       
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          console.log(errorCode, errorMessage);
+     
           setErrorMessage(error.message);
         });
     } else {
@@ -83,14 +83,13 @@ const Login = () => {
           // Signed in
           const user = userCredential.user;
 
-          console.log(user);
+       
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
           //setErrorMessage(errorMessage, "-", errorCode);
-          console.log(errorMessage);
-          console.log(errorCode);
+          
 
           setErrorMessage("Invalid login credentials");
         });

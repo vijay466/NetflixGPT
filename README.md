@@ -26,7 +26,8 @@
 - fetch data for trailer video
 - update store with trailer video
 - embeded youtube video and make it autoplay and mute
-
+- build secondary component
+- integtate gpt api in search bar
 # features
 
 - login/signup page

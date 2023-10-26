@@ -25,9 +25,9 @@ const UserProfileDropdown = () => {
   };
 
   return (
-    <div className="relative group py-7">
+    <div className="relative md:px-4 md:ml-4 group md:py-7 md:-mt-11">
       <button
-        className="flex items-center focus:outline-none"
+        className="md:flex md:items-center focus:outline-none "
         onMouseOver={() => setIsOpen(true)}
       >
         <svg

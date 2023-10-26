@@ -8,17 +8,17 @@ const Logout = () => {
     navigate("/");
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      navigate("/");
-    }, 10000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     navigate("/");
+  //   }, 10000);
+  // }, []);
   return (
     <div>
       <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
         <img className="w-44" alt="netflix_logo" src={NEXTFLIX_LOGO}></img>
       </div>
-      <div className="absolute w-screen h-screen">
+      <div className="absolute w-screen h-screen ">
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/60"></div>
         <img
           className="w-full h-full object-cover"
@@ -27,7 +27,7 @@ const Logout = () => {
         />
       </div>
 
-      <div className=" bg-white absolute text-black w-4/12  my-40 mx-auto left-0 right-0 rounded-lg">
+      <div className=" bg-white absolute text-black w-4/5 md:w-4/12  my-36 md:my-40 mx-auto left-0 right-0 rounded-lg">
         <p className="text-balck text-3xl px-7 py-10">Leaving So Soon? </p>
         <p className="px-7">
           Just so you know, you don’t always need to sign out of Netflix. It’s

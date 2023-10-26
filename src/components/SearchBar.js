@@ -6,6 +6,7 @@ import {
   addGptMovieResult,
   buttonClicked,
   removeButtonClicked,
+  removeGptMoviesAndMovieResults,
 } from "../utils/gptSlice";
 import { API_OPTIONS } from "../utils/constansts";
 
@@ -31,6 +32,7 @@ const SearchBar = () => {
   const handleMessageButton = () => {
     setMessage("");
     dispatch(removeButtonClicked());
+    dispatch(removeGptMoviesAndMovieResults());
   };
   const handleOnchange = (e) => {
     e.preventDefault();
@@ -51,10 +53,7 @@ const SearchBar = () => {
     });
 
     const movieNames = movies?.choices[0]?.message?.content.split(",");
-
-    if (!movies.choices) {
-      //TODO : error handling
-    }
+    console.log(movieNames);
 
     const promiseArray = movieNames.map((movie) => searchMovieTMDB(movie));
     // [promise,promise,promise,promise,promise] => js will not wait
@@ -66,7 +65,7 @@ const SearchBar = () => {
     );
   };
 
-  // for each movie i will search in TMDB api
+  // for each movie I will search in TMDB api
   const toggleSearchBar = () => {
     setIsOpen(!isOpen);
   };
@@ -96,7 +95,7 @@ const SearchBar = () => {
     <div className="relative mr-2 md:px-6  py-2" ref={searchbarRef}>
       <div className={`flex ${isOpen ? "justify-end" : "justify-start"}`}>
         <div className="relative">
-          <div className="mr-16">
+          <div className="md:mr-17 -ml-7 md:-ml-0">
             <div className="relative" style={{ display: "flex" }}>
               <input
                 ref={inputText}
@@ -142,7 +141,9 @@ const SearchBar = () => {
         </div>
         <button
           onClick={toggleSearchBar}
-          className={`px-3 cursor-pointer ${isOpen ? "hidden" : "block"}`}
+          className={`ml-24 md:ml-0  md:px-3 cursor-pointer ${
+            isOpen ? "hidden" : "block"
+          }`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

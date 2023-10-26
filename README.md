@@ -28,6 +28,16 @@
 - embeded youtube video and make it autoplay and mute
 - build secondary component
 - integtate gpt api in search bar
+- created gpt slice 
+- memoization
+- fetched gpt movie suggestions from tmmdb api 
+- resued movieList component for search suggestions 
+- responsive site
+- Shimmer Ui
+- use memoization for reamaining api calls and extract the api calls logic to custom hooks
+<!-- TODO: scroll bar feature -->
+<!-- TODO:back functionality in search page -->
+
 # features
 
 - login/signup page

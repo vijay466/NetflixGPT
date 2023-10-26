@@ -63,13 +63,11 @@ const Login = () => {
               // An error occurred
               setErrorMessage(error.message);
             });
-
-       
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-     
+
           setErrorMessage(error.message);
         });
     } else {
@@ -82,14 +80,11 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-
-       
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
           //setErrorMessage(errorMessage, "-", errorCode);
-          
 
           setErrorMessage("Invalid login credentials");
         });
@@ -116,7 +111,7 @@ const Login = () => {
 
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="absolute p-12 bg-black w-3/12  my-36 mx-auto left-0 right-0 text-white rounded-lg bg-opacity-80"
+        className="absolute p-12   bg-black  w-4/5 md:w-3/12  my-36 mx-auto left-0 right-0 text-white rounded-lg bg-opacity-80"
       >
         <h1 className="font-bold font-4xl py-3">
           {isSignIn ? "Sign In " : "Sign Up"}

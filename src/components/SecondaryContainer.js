@@ -11,12 +11,20 @@ const SecondaryContainer = () => {
   return (
     <div className="bg-black">
       <div className="-mt-10 md:-mt-64 relative z-20 pl-12">
-        <MovieList title={"Now Playing"} movies={movies} />
-        <MovieList title={"Top Rated"} movies={topRated} />
-        <MovieList title={"Popular"} movies={popular} />
+        <MovieList
+          title={"Now Playing"}
+          movies={movies}
+          id="No-playing-slider"
+        />
+        <MovieList title={"Top Rated"} movies={topRated} id="TopRated-slider" />
+        <MovieList title={"Popular"} movies={popular} id="Popular-slider" />
 
-        <MovieList title={"Upcoming Movies"} movies={upComing} />
-        <MovieList title={"Horror"} movies={movies} />
+        <MovieList
+          title={"Upcoming Movies"}
+          movies={upComing}
+          id="Upcoming-slider"
+        />
+        <MovieList title={"Horror"} movies={movies} id="Horror-slider" />
       </div>
     </div>
   );

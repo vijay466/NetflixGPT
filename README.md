@@ -33,10 +33,12 @@
 - fetched gpt movie suggestions from tmmdb api 
 - resued movieList component for search suggestions 
 - responsive site
-- Shimmer Ui
+- Shimmer Ui 
 - use memoization for reamaining api calls and extract the api calls logic to custom hooks
-<!-- TODO: scroll bar feature -->
-<!-- TODO:back functionality in search page -->
+- scroll bar feature
+- back functionality in search page
+- dropdowm bug in mobile device 
+- code refactor 
 
 # features
 

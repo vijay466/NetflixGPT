@@ -18,7 +18,7 @@ const Browse = () => {
   useUpComingMovies();
 
   return (
-    <div className="">
+    <div>
       <Header />
       <div className="bg-black w-screen h-screen">
         {goButtonState ? (

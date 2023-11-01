@@ -4,6 +4,8 @@ import Login from "./Login";
 
 import Logout from "./Logout";
 import GptSearch from "./GptSearch";
+import Profile from "./Profile";
+import ErrorPage from "./ErrorPage";
 
 const Body = () => {
   const appRouter = createBrowserRouter([
@@ -23,6 +25,14 @@ const Body = () => {
     {
       path: "/search",
       element: <GptSearch />,
+    },
+    {
+      path: "/profile",
+      element: <Profile />,
+    },
+    {
+      path: "/errorpage",
+      element: <ErrorPage />,
     },
   ]);
 

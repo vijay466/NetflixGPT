@@ -8,11 +8,11 @@ const Logout = () => {
     navigate("/");
   };
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     navigate("/");
-  //   }, 10000);
-  // }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      navigate("/");
+    }, 10000);
+  }, []);
   return (
     <div>
       <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
@@ -34,7 +34,7 @@ const Logout = () => {
           only necessary if you’re on a shared or public computer.
         </p>
         <p className="py-7 px-7">
-          You’ll be redirected to Netflix.com in 10 seconds.
+          You’ll be redirected to Login Screen in 10 seconds.
         </p>
         ``
         <div className="px-7 py-3 w - 4/12  mt-[-35px] ">

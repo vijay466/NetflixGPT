@@ -6,6 +6,7 @@ import ShimmerList from "./ShimmerList";
 
 const GptSearch = () => {
   const { movieResult, gptMovies } = useSelector((store) => store.gpt);
+  
 
   if (!gptMovies || !movieResult) {
     // Display shimmer while data is loading
@@ -29,6 +30,7 @@ const GptSearch = () => {
             key={movieName}
             title={movieName}
             movies={movieResult[index]}
+            id={movieName}
           />
         ))}
       </div>

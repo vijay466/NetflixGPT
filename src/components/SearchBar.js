@@ -53,7 +53,7 @@ const SearchBar = () => {
     });
 
     const movieNames = movies?.choices[0]?.message?.content.split(",");
-    console.log(movieNames);
+
 
     const promiseArray = movieNames.map((movie) => searchMovieTMDB(movie));
     // [promise,promise,promise,promise,promise] => js will not wait

@@ -26,7 +26,7 @@ const MovieList = ({ title, movies, id }) => {
   }, [id, scrollPosition]);
 
   return (
-    <div className="-ml-10 md:-ml-0 md:px-3 py-5">
+    <div className="-ml-4 md:-ml-0 md:px-3 py-5">
       <h1 className="text-xl font-semibold px-2 text-white">{title}</h1>
       <div className="relative flex items-center">
         {scrollable && scrollPosition > 0 && (
@@ -47,7 +47,7 @@ const MovieList = ({ title, movies, id }) => {
         )}
         <div
           id={id}
-          className="w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide"
+          className="w-full h-full overflow-x-scroll  scroll whitespace-nowrap scroll-smooth scrollbar-hide"
           onScroll={(e) => setScrollPosition(e.target.scrollLeft)}
         >
           <div>
